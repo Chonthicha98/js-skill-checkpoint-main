@@ -2,13 +2,22 @@
 
 function filterInStockProducts(products) {
   // เริ่มเขียนโค้ดตรงนี้
+  // use if-else
+  //maybe new book to contain new arr?
+  let productNotZero = [];
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].quantity !== 0) {
+      productNotZero += products[i];
+    }
+  }
+  return productNotZero;
 }
 
 // ตัวอย่างการใช้งาน
 const products = [
-  { name: "apple", quantity: 2 },
-  { name: "banana", quantity: 0 },
-  { name: "orange", quantity: 5 },
+  { name: 'apple', quantity: 2 },
+  { name: 'banana', quantity: 0 },
+  { name: 'orange', quantity: 5 },
 ];
 
 console.log(filterInStockProducts(products));
