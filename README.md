@@ -4,6 +4,6 @@
 
 ## ข้อมูลผู้สอบ
 
-- ชื่อ:
-- นามสกุล:
-- อีเมล:
+- ชื่อ: Chonthicha
+- นามสกุล: Nathongthip
+- อีเมล: chonthichanet@gmail.com
