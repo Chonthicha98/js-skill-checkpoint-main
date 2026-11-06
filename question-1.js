@@ -6,3 +6,20 @@ const inventory = {
 };
 
 // เริ่มเขียนโค้ดตรงนี้
+//1.reassign Apple จาก 100 เป็น 200
+inventory.apple.quantity = 200;
+console.log(inventory.apple);
+
+//2.add "orange", price 20, Qty 300
+inventory.orange = { price: 20, quantity: 300 };
+console.log(inventory);
+
+//3. คำนวณมูลค่ารวมของจำนวนสินค้าทั้งหมดในสต็อกด้วย Loop
+let totalPrice = 0;
+
+for (let objKey in inventory) {
+  let item = inventory[objKey];
+  totalPrice = totalPrice + item.price * item.quantity;
+}
+//4. console.log
+console.log(`Total inventory value: ${totalPrice} baht`);

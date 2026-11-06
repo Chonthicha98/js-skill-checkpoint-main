@@ -2,14 +2,24 @@
 
 function calculateTotalPrice() {
   // เริ่มเขียนโค้ดตรงนี้
+  // declare container to keep result price
+  // use for-loop to loop in and += price * qty.
+  // return result
+  let totalPrice = 0;
+  for (let i = 0; i < cart.length; i++) {
+    totalPrice += cart[i].price * cart[i].quantity;
+  }
+  return totalPrice;
 }
 
 // ตัวอย่างการใช้งาน
 
 const cart = [
-  { name: "apple", price: 10, quantity: 2 },
-  { name: "banana", price: 15, quantity: 1 },
-  { name: "orange", price: 5, quantity: 3 },
+  { name: 'apple', price: 10, quantity: 2 },
+  { name: 'banana', price: 15, quantity: 1 },
+  { name: 'orange', price: 5, quantity: 3 },
 ];
 
-console.log(calculateTotalPrice(cart)); // ผลลัพธ์จากการ Execute ตัว Function จะต้องได้: 50
+console.log(calculateTotalPrice(cart));
+// ผลลัพธ์จากการ Execute ตัว Function จะต้องได้: 50
+// throw cart as function's parameter to get total price of this cart
