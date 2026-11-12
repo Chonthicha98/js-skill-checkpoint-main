@@ -7,7 +7,7 @@ function filterInStockProducts(products) {
   let productNotZero = [];
   for (let i = 0; i < products.length; i++) {
     if (products[i].quantity !== 0) {
-      productNotZero += products[i];
+      productNotZero.push(products[i]);
     }
   }
   return productNotZero;
