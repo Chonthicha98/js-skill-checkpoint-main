@@ -21,5 +21,7 @@ for (let objKey in inventory) {
   let item = inventory[objKey];
   totalPrice = totalPrice + item.price * item.quantity;
 }
+console.log(totalPrice);
+
 //4. console.log
 console.log(`Total inventory value: ${totalPrice} baht`);
