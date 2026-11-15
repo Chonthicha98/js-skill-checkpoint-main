@@ -8,17 +8,24 @@ const userTaskList = [
 ];
 
 // เริ่มเขียนโค้ดตรงนี้
-//Q1. add new task at the end // .unshift add to the first index
+//Q1. add new task at the end // .push na ka --> add to the first index
 userTaskList.push({ id: 5, task: 'Walk the dog' });
 console.log(userTaskList);
 
-//Q2. reassign Task ที่มี id เป็น 4 จาก "Wash dishes" เป็น "Go to the gym"
-userTaskList[3].task = 'Go to the gym';
-console.log(userTaskList[3]);
-
-//Q3. ลบ Task สุดท้ายที่อยู่ใน Array ออก // .unshift() is remove the first index
-userTaskList.pop([4]);
+//Q2. reassign Task ที่มี id เป็น 4 เป็น "Go to the gym" - improve to dynamic index use .find() & if
+const updateTask = userTaskList.find((userId) => userId.id === 4);
+if (updateTask) {
+  updateTask.task = 'Go to the gym';
+} else {
+  console.log(-1);
+}
 console.log(userTaskList);
 
-//Q4. Log ข้อความของ Task ตัวสุดท้าย // this case no need to track exectly total index
-console.log(userTaskList[userTaskList.length - 1]);
+//Q3. ลบ Task สุดท้ายที่อยู่ใน Array ออก .pop() is remove the last index - leave parameter empty == last index
+userTaskList.pop();
+console.log(userTaskList);
+
+//Q4. Log ข้อความของ Task ตัวสุดท้าย // dynamic tracking last task index and display it
+const lastTask = userTaskList.length - 1;
+const displayLastTask = userTaskList[lastTask];
+console.log(`Task id: ${displayLastTask.id}, ${displayLastTask.task}`);
